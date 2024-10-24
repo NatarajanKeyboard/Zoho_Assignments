@@ -20,35 +20,42 @@ public class Tictactoe {
 
             }
         }
-        System.out.println(count_x + " " + count_o);
+        // System.out.println(count_x + " " + count_o);
 
         boolean flag = true;
         if (count_x < count_o) {
-            System.out.println("Invalid: wrong turn ");
+            System.out.println("Invalid: wrong turn ");         //checking for invalid 
+            flag=false;
         }
-        boolean count_less=false;
+        boolean count_less = false;
         if (count_x < 5) {
-            count_less= true;
-        } 
-        else 
-        {
-            if (flag) {
-                for (int i = 0; i < 3; i++) {
+            count_less = true;
+        }
 
-                    if ((tic[i][0].equals("x") && tic[i][1].equals("x") && tic[i][2].equals("x"))
-                            || (tic[0][i].equals("x") && tic[1][i].equals("x") && tic[2][i].equals("x"))) {
-                        System.out.println("X wins");
-                        flag = false;
-                        break;
+        if (count_x >= 3) {
 
+            for (int i = 0; i < 3; i++) {
+
+                if ((tic[i][0].equals("x") && tic[i][1].equals("x") && tic[i][2].equals("x"))
+                        || (tic[0][i].equals("x") && tic[1][i].equals("x") && tic[2][i].equals("x"))) {
+
+                    if (count_x != count_o) {
+                        System.out.println("X wins");           //prints only if it is in correct order
+                    } // wins horizontally or vertically
+                    else {
+                        System.out.println("Invalid: Continued playing after win");
                     }
+                    flag = false;
+                    break;
 
                 }
-                if ((tic[0][0].equals("x") && tic[1][1].equals("x") && tic[2][2].equals("x"))
-                        || (tic[0][2].equals("x") && tic[1][1].equals("x") && tic[2][0].equals("x"))) {
-                    System.out.println("X wins");
 
-                }
+            }
+            if (flag && ((tic[0][0].equals("x") && tic[1][1].equals("x") && tic[2][2].equals("x"))
+                    || (tic[0][2].equals("x") && tic[1][1].equals("x") && tic[2][0].equals("x")))) {
+                System.out.println("X wins"); // wins diagonally
+                flag = false;
+
             }
 
             if (flag) {
@@ -57,40 +64,39 @@ public class Tictactoe {
 
                     if ((tic[i][0].equals("o") && tic[i][1].equals("o") && tic[i][2].equals("o"))
                             || (tic[0][i].equals("o") && tic[1][i].equals("o") && tic[2][i].equals("o"))) {
-                        System.out.println("O wins");
-                        flag=false;
+                        System.out.println("O wins"); // wins horizontally or vertically
+                        flag = false;
                         break;
 
                     }
 
                 }
-                if ((tic[0][0].equals("o") && tic[1][1].equals("o") && tic[2][2].equals("o"))
-                        || (tic[0][2].equals("o") && tic[1][1].equals("o") && tic[2][0].equals("o"))) {
-                            if(flag)
-                            {
-                                System.out.println("Continued playing after win");
-                            }
-                    System.out.println("O wins");
+                if (flag && ((tic[0][0].equals("o") && tic[1][1].equals("o") && tic[2][2].equals("o"))
+                        || (tic[0][2].equals("o") && tic[1][1].equals("o") && tic[2][0].equals("o")))) {
+                    if (flag) {
+                        System.out.println("Continued playing after win");
+                    }
+                    System.out.println("O wins"); // wins diagonally
+                    flag = false;
 
+                }
+                if (flag && count_x == 5) {
+                    System.out.println("Draw");             //draws only if  all the tiles are filled and no x,o wins previously
+                    flag = false;
                 }
 
             }
+        }
 
-            
-                if (count_less && !flag) {
-                    System.out.println("ongoing");
-                } else {
-                    System.out.println("Draw");
-                }
-            
-
+        if (flag && count_less) {
+            System.out.println("ongoing");          //if it has many dots and no wins as of now
         }
 
         // for (int i = 0; i < 3; i++) {
-        //     for (int j = 0; j < 3; j++) {
-        //         System.out.print(tic[i][j] + " ");
-        //     }
-        //     System.out.println();
+        // for (int j = 0; j < 3; j++) {
+        // System.out.print(tic[i][j] + " ");
+        // }
+        // System.out.println();
         // }
 
         sc.close();
