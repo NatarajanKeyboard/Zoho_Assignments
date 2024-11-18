@@ -123,7 +123,7 @@ class jeep extends Fourwheeler
     public void climb(){}
 }
 
-public class VehicleMethodOverloading {
+public class VehicleMethodOverriding {
     public static void main(String[] args) {
         
     }
