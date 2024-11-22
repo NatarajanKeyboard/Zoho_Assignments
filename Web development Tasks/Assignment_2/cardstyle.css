@@ -1,0 +1,135 @@
+
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif; 
+        }
+        header {
+            border-bottom: solid 13px;
+            margin-left: 0px;
+            /* margin-left: 0px; */
+            padding: 5px;
+            margin-top: -50px;
+            justify-items: center;
+            background-color: #6c0000;
+            border-color: #ff4545;
+        }
+        header h1 {
+            color: rgb(141, 111, 82);
+            font-size: 60px;
+            padding-top: 50px;
+            padding-bottom: 30px;
+            justify-items: center;
+            font-weight: 900;
+        }
+        .body_div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            border: solid rgb(247, 228, 13);
+            border-width: 3px;
+            border-radius: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0px 0px 25px 20px rgba(0, 0, 0, 0.1);
+            gap: 15px;
+            padding: 20px;
+            margin-top: -50px;
+            background-color: rgb(255, 255, 255);
+        }
+        .cardTitle h1 {
+            color: rgb(95, 94, 94);
+            padding-left: 20px;
+        }
+        .cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 25px;
+            justify-content: space-between;
+        }
+        .card {
+            background-color: rgb(131, 255, 90);
+            border-width: 10px;
+            border-radius: 25px;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            height: 290px;
+            width: calc(100% / 4 - 20px);
+            transition: transform 0.5s, box-shadow 0.3s; 
+            box-shadow: 0px 14px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            object-fit: cover;
+            height: 160px;
+            width: 100%;
+        }
+        .card:hover {
+            background-color: #fff345;
+            transform: translateY(-20px);
+            box-shadow: 0px 14px 18px rgba(0, 0, 0, 0.4);
+        }
+        .context {
+            background-color: aliceblue;
+            padding: 10px;
+        }
+        h2 {
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        h5 {
+            margin-left: 10px;
+            font-weight: lighter;
+            color: rgb(107, 107, 107);
+        }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 50px; /* Adjust header font size for medium screens */
+            }
+            .card {
+                width: calc(100% / 3 - 20px); /* 3 cards per row for medium screens */
+            }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px; /* Adjust header font size for small screens */
+            }
+            .container {
+                padding: 10px; /* Reduce padding for extra small screens */
+                margin-top: -50px;
+                margin-left: 10px;/* Adjust margin for extra small screens */
+                margin-right: 10px;
+            }
+            .card {
+                width: calc(100% / 2 - 20px); /* 2 cards per row for small screens */
+            }
+
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 30px; /* Adjust header font size for extra small screens */
+                /* color: aqua; */
+            }
+            .card {
+                width: 100%; /* Full width for extra small screens */
+            }
+            .container {
+                padding: 10px; /* Reduce padding for extra small screens */
+                margin-top: -50px; /* Adjust margin for extra small screens */
+            }
+            .body_div {
+                padding: 10px; /* Reduce padding for extra small screens */
+            }
+            .cards {
+                padding: 0px; /* Reduce padding for extra small screens */
+                gap: 20px; /* Reduce gap between cards for extra small screens */
+            }
+        }
+    
